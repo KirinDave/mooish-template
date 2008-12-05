@@ -13,6 +13,10 @@ of the tests in this template pull the code from your mootools repo
 dynamically before each test is run - there really isn't a stagnant copy of 
 mootools or other js library lying around anywhere.
 
+Initial Setup
+-------------
+
+  TODO
 
 What's in the box?
 ------------------
@@ -76,6 +80,35 @@ What's in the box?
   For help on adding tests here look at the second part of "3." under the header 
   "Adding your code".
   
+Adding your code
+----------------
+
+  Got some sweet code to add to your project? Follow these simple steps to glory:
+
+  1. Add the class/class.extension in its own file in the Source directory. 
+     If it doesn't fit into one of the directories there, create a new one. 
+  2. Add your new filename to scripts.json. The first level of the hash there
+     is for the directories under Source. The 2nd level is for the files in
+     those directories. Make sure to add a desc(ription) and dep(endencie)s.
+     The dependencies can be anything found in a scripts.json file you pointed
+     to in build.yml. 
+  3. If this particular code doesn't do anything visual, add your tests to 
+     Specs/sample_specs.js in its own describe block. You will also have 
+     to add the directory/filename to the custom Builder call at the top of 
+     Specs/suite.html (around line 20) so that the test suite will know to pull
+     in your code before it runs. You may also have to edit src and 
+     Builder.root locations to point at your own Mootools-core repo. 
+
+     Otherwise, you'll need to add a test to the Unit Test Framework. Follow
+     the same steps for adding a director/file from 1. but do it in 
+     Tests/UserTests and add two files: ClassName.testname.js and 
+     ClassName.testname.html. Now add your ClassName & testname to 
+     UserTests/test.json so they'll show up in the list. Oh also maybe write
+     test code and html in those two files (look at the others for an example).
+
+  [1]: http://mootools.net/
+  [2]: http://www.clientcide.com  
+  
 Running your tests
 ------------------
 
@@ -110,32 +143,3 @@ Building a custom lib js file
   other words, if it is a .js file under any Mooish Source dir you can use it.
   
   This will output a file in the top-level, whose name is given in build.yml. 
-  
-Adding your code
-----------------
-
-  Got some sweet code to add to your project? Follow these simple steps to glory:
-  
-  1. Add the class/class.extension in its own file in the Source directory. 
-     If it doesn't fit into one of the directories there, create a new one. 
-  2. Add your new filename to scripts.json. The first level of the hash there
-     is for the directories under Source. The 2nd level is for the files in
-     those directories. Make sure to add a desc(ription) and dep(endencie)s.
-     The dependencies can be anything found in a scripts.json file you pointed
-     to in build.yml. 
-  3. If this particular code doesn't do anything visual, add your tests to 
-     Specs/sample_specs.js in its own describe block. You will also have 
-     to add the directory/filename to the custom Builder call at the top of 
-     Specs/suite.html (around line 20) so that the test suite will know to pull
-     in your code before it runs. You may also have to edit src and 
-     Builder.root locations to point at your own Mootools-core repo. 
-  
-     Otherwise, you'll need to add a test to the Unit Test Framework. Follow
-     the same steps for adding a director/file from 1. but do it in 
-     Tests/UserTests and add two files: ClassName.testname.js and 
-     ClassName.testname.html. Now add your ClassName & testname to 
-     UserTests/test.json so they'll show up in the list. Oh also maybe write
-     test code and html in those two files (look at the others for an example).
-
-  [1]: http://mootools.net/
-  [2]: http://www.clientcide.com
