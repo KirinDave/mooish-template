@@ -35,7 +35,7 @@ What's in the box?
   
   This really comes in handy for building custom Javascript lib files for your
   projects. For example, my site www.iancollins.me uses classes from Mootools, 
-  Clientcide and Brawndo. I have a one-line file "3n" with this inside of it:
+  Clientcide and Brawndo™. I have a one-line file "3n" with this inside of it:
     
     JsonP Date Date.Extras JustTheTip Number.BrawndoExtras Function.BrawndoExtras 
     Element.BrawndoScrolling Element.BrawndoExtras Element.BrawndoImage 
@@ -47,7 +47,12 @@ What's in the box?
   
     ruby build.rb <($3n)
     
-### Source
+### builder.yml
+
+  This is a YAML defining paths to all of the project's scripts.json files that
+  you want depend on for this project. 
+    
+### Source/
 
   This is where your code lives. There is a dummy directory and file as an example,
   these can be deleted. Each class or set of extensions should be in its own file,
@@ -59,15 +64,17 @@ What's in the box?
   up-to-date. It has an accurate representation of the code provided in /Source, 
   with dependencies from Mootools-core.
   
-### Specs
+### Specs/
 
   This is a basic Screw.Unit setup for your specs. Delete this is you'd rather
   use JSSpec or some other crazy framework I don't know about. For help on adding
   tests here look at the first part of "3." under the header "Adding your code". 
   
-### Specs
+### Tests/
 
-  
+  This is a basic Mootool Unit Test Framework setup for your interactive tests. 
+  For help on adding tests here look at the second part of "3." under the header 
+  "Adding your code".
   
 Running your tests
 ------------------
@@ -90,7 +97,7 @@ Building a custom lib js file
   First, edit the build.yml file to suite your needs. Add/remove items from the 
   dependency_paths list to point to all of the scripts.json files you care
   about. In my setup I point to mootools-more, mootools-core, clientcide and of
-  course, Brawndo™ (the Source directory here). 
+  course, the Source directory here. 
   
   Now, in the root directory of the project run:
     
@@ -116,7 +123,7 @@ Adding your code
      The dependencies can be anything found in a scripts.json file you pointed
      to in build.yml. 
   3. If this particular code doesn't do anything visual, add your tests to 
-     Specs/brawndo_specs.js in its own describe block. You will also have 
+     Specs/sample_specs.js in its own describe block. You will also have 
      to add the directory/filename to the custom Builder call at the top of 
      Specs/suite.html (around line 20) so that the test suite will know to pull
      in your code before it runs. You may also have to edit src and 
