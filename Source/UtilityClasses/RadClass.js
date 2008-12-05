@@ -13,6 +13,7 @@ var RadClass = new Class({
 		this.setOptions(options);
 		this.elem = elem;
 		
-		this.elem.set('html', "I am rad.");
+		this.elem.set('html', "I am rad.")
+						 .setStyles({ 'background-color':'red', 'color':'white' });
 	}
 });

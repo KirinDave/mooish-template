@@ -2,7 +2,13 @@ Mooish Template
 ===============
 A template for building JS libraries structured like [Mootools][1], works
 great for building code on top of Mootools (plugins/classes/extensions etc).
-
+I use this to store and maintain all of my reusable JS that I use in my 
+various projects. It is essentially a directory of code with each component
+in its own file, a file defining dependencies, a builder ruby script and two 
+test frameworks. Included is some sample code w/ tests. It maintains pointers
+in various places to other JS library directories (with their own scripts.json
+file) so that it can include all the dependencies at build time. Read the
+"Initial Setup" section for help on this. 
 
 The most important part of this organization scheme is that all of your js code
 lives in one place, is tested in one place and is pushed/pulled from one place. 
@@ -13,10 +19,23 @@ of the tests in this template pull the code from your mootools repo
 dynamically before each test is run - there really isn't a stagnant copy of 
 mootools or other js library lying around anywhere.
 
+
 Initial Setup
 -------------
 
-  TODO
+  This template works best if you have a mootools-core directory/repo
+  on your disk somewhere. I keep mine at the same level as this directory as
+  its own git repo so I can have all the remotes setup the way I want. This 
+  means I can switch the branch of my mootools-core repo to a different version
+  etc. and build lib.js files with that version of moo. Very convenient. If you
+  want your mootools-core and other libraries in a different place just search
+  for the string `../mootools-core` in this project and correct it (and the other
+  library paths) to your specifications. You will probably want to look at: 
+  build.yml, config.js and suite.html. 
+  
+  After that follow the directions below to add you code to Source/, Tests/ and
+  Specs/
+
 
 What's in the box?
 ------------------
@@ -76,9 +95,10 @@ What's in the box?
   
 ### Tests/
 
-  This is a basic Mootool Unit Test Framework setup for your interactive tests. 
+  This is a basic [Mootool Unit Test Framework][3] setup for your interactive tests. 
   For help on adding tests here look at the second part of "3." under the header 
   "Adding your code".
+  
   
 Adding your code
 ----------------
@@ -105,9 +125,7 @@ Adding your code
      ClassName.testname.html. Now add your ClassName & testname to 
      UserTests/test.json so they'll show up in the list. Oh also maybe write
      test code and html in those two files (look at the others for an example).
-
-  [1]: http://mootools.net/
-  [2]: http://www.clientcide.com  
+  
   
 Running your tests
 ------------------
@@ -123,6 +141,7 @@ Running your tests
   You may also need to edit /Tests/config.js to point to the right library source
   directories. The first object being passed in to the UnitTester constructor
   is what you should change. 
+  
   
 Building a custom lib js file
 -----------------------------
@@ -143,3 +162,7 @@ Building a custom lib js file
   other words, if it is a .js file under any Mooish Source dir you can use it.
   
   This will output a file in the top-level, whose name is given in build.yml. 
+  
+[1]: http://mootools.net/
+[2]: http://www.clientcide.com  
+[3]: http://www.clientcide.com/TestFramework/readme.html
