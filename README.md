@@ -112,26 +112,26 @@ Adding your code
 
   Got some sweet code to add to your project? Follow these simple steps to glory:
 
-  1. Add the class/class.extension in its own file in the Source directory. 
-     If it doesn't fit into one of the directories there, create a new one. 
-  2. Add your new filename to scripts.json. The first level of the hash there
-     is for the directories under Source. The 2nd level is for the files in
-     those directories. Make sure to add a desc(ription) and dep(endencie)s.
-     The dependencies can be anything found in a scripts.json file you pointed
-     to in build.yml. 
-  3. If this particular code doesn't do anything visual, add your tests to 
-     Specs/sample_specs.js in its own describe block. You will also have 
-     to add the directory/filename to the custom Builder call at the top of 
-     Specs/suite.html (around line 20) so that the test suite will know to pull
-     in your code before it runs. You may also have to edit src and 
-     Builder.root locations to point at your own Mootools-core repo. 
+1. Add the class/class.extension in its own file in the Source directory. 
+   If it doesn't fit into one of the directories there, create a new one. 
+2. Add your new filename to scripts.json. The first level of the hash there
+   is for the directories under Source. The 2nd level is for the files in
+   those directories. Make sure to add a desc(ription) and dep(endencie)s.
+   The dependencies can be anything found in a scripts.json file you pointed
+   to in build.yml. 
+3. If this particular code doesn't do anything visual, add your tests to 
+   Specs/sample_specs.js in its own describe block. You will also have 
+   to add the directory/filename to the custom Builder call at the top of 
+   Specs/suite.html (around line 20) so that the test suite will know to pull
+   in your code before it runs. You may also have to edit src and 
+   Builder.root locations to point at your own Mootools-core repo. 
 
-     Otherwise, you'll need to add a test to the Unit Test Framework. Follow
-     the same steps for adding a director/file from 1. but do it in 
-     Tests/UserTests and add two files: ClassName.testname.js and 
-     ClassName.testname.html. Now add your ClassName & testname to 
-     UserTests/test.json so they'll show up in the list. Oh also maybe write
-     test code and html in those two files (look at the others for an example).
+   Otherwise, you'll need to add a test to the Unit Test Framework. Follow
+   the same steps for adding a director/file from 1. but do it in 
+   Tests/UserTests and add two files: ClassName.testname.js and 
+   ClassName.testname.html. Now add your ClassName & testname to 
+   UserTests/test.json so they'll show up in the list. Oh also maybe write
+   test code and html in those two files (look at the others for an example).
   
   
 Running your tests
