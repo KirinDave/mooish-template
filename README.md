@@ -27,11 +27,11 @@ Initial Setup
   on your disk somewhere. I keep mine at the same level as this directory as
   its own git repo so I can have all the remotes setup the way I want. This 
   means I can switch the branch of my mootools-core repo to a different version
-  etc. and build lib.js files with that version of moo. Very convenient. If you
+  etc. and build `lib.js` files with that version of moo. Very convenient. If you
   want your mootools-core and other libraries in a different place just search
   for the string `../mootools-core` in this project and correct it (and the other
   library paths) to your specifications. You will probably want to look at: 
-  build.yml, config.js and suite.html. 
+  `build.yml`, `config.js` and `suite.html`. 
   
   After that follow the directions below to add you code to Source/, Tests/ and
   Specs/
@@ -81,7 +81,7 @@ What's in the box?
   these can be deleted. Each class or set of extensions should be in its own file,
   in a directory that makes sense for what it does. 
   
-### Source/`scripts.json`
+### Source/scripts.json
 
   This is a JSON representation of your code inside Source - __you__ keep this file
   up-to-date. It has an accurate representation of the code provided in /Source, 
@@ -120,7 +120,7 @@ Adding your code
    The dependencies can be anything found in a `scripts.json` file you pointed
    to in build.yml. 
 3. If this particular code doesn't do anything visual, add your tests to 
-   Specs/sample_specs.js in its own describe block. You will also have 
+   `Specs/sample_specs.js` in its own describe block. You will also have 
    to add the directory/filename to the custom Builder call at the top of 
    Specs/suite.html (around line 20) so that the test suite will know to pull
    in your code before it runs. You may also have to edit src and 
@@ -128,9 +128,9 @@ Adding your code
 
    Otherwise, you'll need to add a test to the Unit Test Framework. Follow
    the same steps for adding a director/file from 1. but do it in 
-   Tests/UserTests and add two files: ClassName.testname.js and 
-   ClassName.testname.html. Now add your ClassName & testname to 
-   UserTests/test.json so they'll show up in the list. Oh also maybe write
+   Tests/UserTests and add two files: `ClassName.testname.js` and 
+   `ClassName.testname.html`. Now add your ClassName & testname to 
+   `UserTests/test.json` so they'll show up in the list. Oh also maybe write
    test code and html in those two files (look at the others for an example).
   
   
@@ -145,7 +145,7 @@ Running your tests
   For the interactive tests you should have Apache/Nginx or some other webserver 
   serving the files. Just point your browser at the Tests directory. For the 
   specs you don't need the webserver - just point your browser at Specs/suite.html.
-  You may also need to edit /Tests/config.js to point to the right library source
+  You may also need to edit `/Tests/config.js` to point to the right library source
   directories. The first object being passed in to the UnitTester constructor
   is what you should change. 
   
