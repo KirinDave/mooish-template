@@ -6,7 +6,7 @@ I use this to store and maintain all of my reusable JS that I use in my
 various projects. It is essentially a directory of code with each component
 in its own file, a file defining dependencies, a builder ruby script and two 
 test frameworks. Included is some sample code w/ tests. It maintains pointers
-in various places to other JS library directories (with their own scripts.json
+in various places to other JS library directories (with their own `scripts.json`
 file) so that it can include all the dependencies at build time. Read the
 "Initial Setup" section for help on this. 
 
@@ -44,15 +44,15 @@ What's in the box?
 ### builder.rb
 
   There is a customized bulder.rb script (based on the one included in moo-core)
-  that allows for multiple pointers to scripts.json files. With this you can
+  that allows for multiple pointers to `scripts.json` files. With this you can
   build a customized js file that includes classes from any library (with a 
-  scripts.json file), including your own source code. For example:
+  `scripts.json` file), including your own source code. For example:
   
     $> ruby build.rb Core JsonP MyRadClassIsTight
     
   Notice that all three of the supplied dependencies are from different
   libraries (Mootools-core, Clientcide and fake respectively). Since all
-  three have scripts.json files that link each other up, the build will produce
+  three have `scripts.json` files that link each other up, the build will produce
   a file with those three classes concatenated along with all of their 
   dependencies.
   
@@ -72,7 +72,7 @@ What's in the box?
     
 ### builder.yml
 
-  This is a YAML defining paths to all of the project's scripts.json files that
+  This is a YAML defining paths to all of the project's `scripts.json` files that
   you want depend on for this project. 
     
 ### Source/
@@ -81,7 +81,7 @@ What's in the box?
   these can be deleted. Each class or set of extensions should be in its own file,
   in a directory that makes sense for what it does. 
   
-### Source/scripts.json
+### Source/`scripts.json`
 
   This is a JSON representation of your code inside Source - __you__ keep this file
   up-to-date. It has an accurate representation of the code provided in /Source, 
@@ -114,10 +114,10 @@ Adding your code
 
 1. Add the class/class.extension in its own file in the Source directory. 
    If it doesn't fit into one of the directories there, create a new one. 
-2. Add your new filename to scripts.json. The first level of the hash there
+2. Add your new filename to `scripts.json`. The first level of the hash there
    is for the directories under Source. The 2nd level is for the files in
    those directories. Make sure to add a desc(ription) and dep(endencie)s.
-   The dependencies can be anything found in a scripts.json file you pointed
+   The dependencies can be anything found in a `scripts.json` file you pointed
    to in build.yml. 
 3. If this particular code doesn't do anything visual, add your tests to 
    Specs/sample_specs.js in its own describe block. You will also have 
@@ -154,7 +154,7 @@ Building a custom lib js file
 -----------------------------
 
   First, edit the build.yml file to suite your needs. Add/remove items from the 
-  dependency_paths list to point to all of the scripts.json files you care
+  dependency_paths list to point to all of the `scripts.json` files you care
   about. In this template I point to mootools-more, mootools-core, clientcide 
   and of course, the Source directory here.
   
@@ -163,7 +163,7 @@ Building a custom lib js file
     ruby build.rb Class1 Class2 Class3
     
   List as many filenames (class names, usually) as you want, separated by spaces. 
-  If you aren't sure of what you can put in this list, look at any scripts.json
+  If you aren't sure of what you can put in this list, look at any `scripts.json`
   file (there is one in the Source directory here) - anything at the 2nd depth
   in the hash is fair game. Examples: Array, InvisibleDimensions, JsonP. In 
   other words, if it is a .js file under any Mooish Source dir you can use it.
