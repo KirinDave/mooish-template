@@ -6,12 +6,12 @@ great for building code on top of Mootools (plugins/classes/extensions etc).
 
 The most important part of this organization scheme is that all of your js code
 lives in one place, is tested in one place and is pushed/pulled from one place. 
-I don't have to bother updating a mootools or clientcide file in all of my projects 
-when a new version comes out. I just update my *one* mootools or clientcide repo 
-and use the builder to make new lib js files for my projects. Better still, all
-of the tests in this template pull the code from my mootools or clientcide repo 
+You don't have to bother updating a mootools file in all of your projects 
+when a new version comes out. You just update your *one* mootools or repo 
+and use the builder to make new lib js files for your projects. Better still, all
+of the tests in this template pull the code from your mootools repo 
 dynamically before each test is run - there really isn't a stagnant copy of 
-mootools lying around anywhere.
+mootools or other js library lying around anywhere.
 
 
 What's in the box?
@@ -43,7 +43,7 @@ What's in the box?
     Array.BrawndoExtras dbug TwitterHelpers RandomGlobals DomReady 
     CSSTransitions.Tween
     
-  Now to build all the necessary lib js I simple do: 
+  Now to build all the necessary lib js you simple do: 
   
     ruby build.rb <($3n)
     
