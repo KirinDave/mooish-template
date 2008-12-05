@@ -99,6 +99,13 @@ What's in the box?
   For help on adding tests here look at the second part of "3." under the header 
   "Adding your code".
   
+### Demo/
+
+  A basic example of a demo html/js combo. The html file uses the Mootools builder
+  to import the code to be demoed (along with all of mootools) and has some sample
+  elements to test on. The js file just sets up a simple test case of the component
+  being demoed. 
+  
   
 Adding your code
 ----------------
