@@ -29,9 +29,9 @@ Initial Setup
   means I can switch the branch of my mootools-core repo to a different version
   etc. and build `lib.js` files with that version of moo. Very convenient. If you
   want your mootools-core and other libraries in a different place just search
-  for the string `../mootools-core` in this project and correct it (and the other
+  for the string "../mootools-core" in this project and correct it (and the other
   library paths) to your specifications. You will probably want to look at: 
-  `build.yml`, `config.js` and `suite.html`. 
+  `build.yml`, `config.js`, `index.html` and `suite.html`. 
   
   After that follow the directions below to add you code to Source/, Tests/ and
   Specs/
