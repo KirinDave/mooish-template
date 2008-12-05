@@ -96,8 +96,8 @@ Building a custom lib js file
 
   First, edit the build.yml file to suite your needs. Add/remove items from the 
   dependency_paths list to point to all of the scripts.json files you care
-  about. In my setup I point to mootools-more, mootools-core, clientcide and of
-  course, the Source directory here. 
+  about. In this template I point to mootools-more, mootools-core, clientcide 
+  and of course, the Source directory here.
   
   Now, in the root directory of the project run:
     
@@ -106,14 +106,15 @@ Building a custom lib js file
   List as many filenames (class names, usually) as you want, separated by spaces. 
   If you aren't sure of what you can put in this list, look at any scripts.json
   file (there is one in the Source directory here) - anything at the 2nd depth
-  in the hash is fair game. Examples: Array, InvisibleDimensions, JsonP
+  in the hash is fair game. Examples: Array, InvisibleDimensions, JsonP. In 
+  other words, if it is a .js file under any Mooish Source dir you can use it.
   
   This will output a file in the top-level, whose name is given in build.yml. 
   
 Adding your code
 ----------------
 
-  Got a class or extension to add? Follow these simple steps to glory:
+  Got some sweet code to add to your project? Follow these simple steps to glory:
   
   1. Add the class/class.extension in its own file in the Source directory. 
      If it doesn't fit into one of the directories there, create a new one. 
