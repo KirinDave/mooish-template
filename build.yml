@@ -1,0 +1,9 @@
+# list of paths to necessary scripts.json
+:dependency_paths:
+  - '../mootools-core/Source'  # Mootools Core
+  - '../mootools-more/Source'  # Mootools More
+  - '../cnetjavascript/Source' # clientcide
+  - './Source'                 # Brawndo
+
+# output file path
+:build_path: './brawndo.js'
