@@ -16,7 +16,7 @@ mootools lying around anywhere.
 
 What's in the box?
 ------------------
-  You may have noticed there are some files in this directory. Let me explain.
+  You may have noticed there are some files in this directory. Let me explain:
 
 ### builder.rb
 
@@ -59,6 +59,16 @@ What's in the box?
   up-to-date. It has an accurate representation of the code provided in /Source, 
   with dependencies from Mootools-core.
   
+### Specs
+
+  This is a basic Screw.Unit setup for your specs. Delete this is you'd rather
+  use JSSpec or some other crazy framework I don't know about. For help on adding
+  tests here look at the first part of "3." under the header "Adding your code". 
+  
+### Specs
+
+  
+  
 Running your tests
 ------------------
 
@@ -93,8 +103,8 @@ Building a custom lib js file
   
   This will output a file in the top-level, whose name is given in build.yml. 
   
-Contributing
-------------
+Adding your code
+----------------
 
   Got a class or extension to add? Follow these simple steps to glory:
   
@@ -109,7 +119,8 @@ Contributing
      Specs/brawndo_specs.js in its own describe block. You will also have 
      to add the directory/filename to the custom Builder call at the top of 
      Specs/suite.html (around line 20) so that the test suite will know to pull
-     in your code before it runs.
+     in your code before it runs. You may also have to edit src and 
+     Builder.root locations to point at your own Mootools-core repo. 
   
      Otherwise, you'll need to add a test to the Unit Test Framework. Follow
      the same steps for adding a director/file from 1. but do it in 
